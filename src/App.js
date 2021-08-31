@@ -20,6 +20,12 @@ class App extends Component {
     this.setState({currentSelectedFeature: pos});
   }
 
+  shouldComponentUpdate(nextState, nextProps){
+    if(nextState.currentPreviewImagePos === this.state.currentPreviewImagePos){
+      return false;
+    }
+  }
+
   render() {
     return (
       <div className="App">
